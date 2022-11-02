@@ -3,7 +3,7 @@
 namespace Test;
 
 /**
- * @psalm-type Foo = array{x: string}
+ * @psalm-type Foo = array{x: string, y: string}
  */
 class A
 {
@@ -15,7 +15,16 @@ class A
     {
         $this->prop = 1;
 
-        /** @var Foo $_val */
-        $_val = array_replace([], ['x' => '']);
+        /** @var Foo $foo */
+        $foo = array_replace_recursive(['y' => ''], ['x' => '']);
+        $this->useFoo($foo);
+    }
+
+    /**
+     * @param Foo $foo
+     */
+    public function useFoo(array $foo): void
+    {
+        var_export($foo);
     }
 }
