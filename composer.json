@@ -4,6 +4,6 @@
     "type": "project",
     "license": "MIT",
     "require-dev": {
-        "vimeo/psalm": "^5.0.0-rc1"
+        "vimeo/psalm": "^5.3"
     }
 }
